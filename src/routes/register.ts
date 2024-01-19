@@ -1,9 +1,9 @@
 import { Express } from 'express';
 
 import { CS571Route } from "@cs571/f23-api-middleware/src/interfaces/route";
-import { CS571HW6DbConnector } from '../services/hw6-db-connector';
+import { CS571HW11DbConnector } from '../services/hw11-db-connector';
 import { BadgerUserRegistration } from '../model/badger-user-registration';
-import { CS571HW6TokenAgent } from '../services/hw6-token-agent';
+import { CS571HW11TokenAgent } from '../services/hw11-token-agent';
 import { CS571Config } from '@cs571/f23-api-middleware';
 import HW11PublicConfig from '../model/configs/hw11-public-config';
 import HW11SecretConfig from '../model/configs/hw11-secret-config';
@@ -12,12 +12,12 @@ export class CS571RegisterRoute implements CS571Route {
 
     public static readonly ROUTE_NAME: string = '/register';
 
-    private readonly connector: CS571HW6DbConnector;
-    private readonly tokenAgent: CS571HW6TokenAgent;
+    private readonly connector: CS571HW11DbConnector;
+    private readonly tokenAgent: CS571HW11TokenAgent;
     private readonly config: CS571Config<HW11PublicConfig, HW11SecretConfig>
 
 
-    public constructor(connector: CS571HW6DbConnector, tokenAgent: CS571HW6TokenAgent, config: CS571Config<HW11PublicConfig, HW11SecretConfig>) {
+    public constructor(connector: CS571HW11DbConnector, tokenAgent: CS571HW11TokenAgent, config: CS571Config<HW11PublicConfig, HW11SecretConfig>) {
         this.connector = connector;
         this.tokenAgent = tokenAgent;
         this.config = config;

@@ -10,7 +10,7 @@ import crypto from 'crypto'
 import BadgerMessageCreation from "../model/badger-message-creation";
 import BadgerMessage from "../model/badger-message";
 
-export class CS571HW6DbConnector {
+export class CS571HW11DbConnector {
 
     private badgerMessagesTable!: ModelStatic<any>;
     private badgerUsersTable!: ModelStatic<any>;
@@ -141,7 +141,7 @@ export class CS571HW6DbConnector {
 
     public async createBadgerUser(user: BadgerUserRegistration): Promise<BadgerUser> {
         const salt = crypto.randomBytes(16).toString('hex');
-        const hash = CS571HW6DbConnector.calculateHash(salt, user.password);
+        const hash = CS571HW11DbConnector.calculateHash(salt, user.password);
 
         const creation = await this.badgerUsersTable.create({
             username: user.username,

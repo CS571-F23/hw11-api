@@ -14,11 +14,11 @@ import { CS571RegisterRoute } from './routes/register';
 import { CS571LoginRoute } from './routes/login';
 import { CS571LogoutRoute } from './routes/logout';
 import { CS571WhoAmIRoute } from './routes/whoami';
-import { CS571HW6DbConnector } from './services/hw6-db-connector';
-import { CS571HW6TokenAgent } from './services/hw6-token-agent';
+import { CS571HW11DbConnector } from './services/hw11-db-connector';
+import { CS571HW11TokenAgent } from './services/hw11-token-agent';
 import { CS571PasswordsRoute } from './routes/passwords';
 
-console.log("Welcome to HW6!");
+console.log("Welcome to HW11!");
 
 const app: Express = express();
 
@@ -29,8 +29,8 @@ const appBundle = CS571Initializer.init<HW11PublicConfig, HW11SecretConfig>(app,
   skipAuth: false
 });
 
-const db = new CS571HW6DbConnector(appBundle.config);
-const ta = new CS571HW6TokenAgent(appBundle.config);
+const db = new CS571HW11DbConnector(appBundle.config);
+const ta = new CS571HW11TokenAgent(appBundle.config);
 
 db.init();
 

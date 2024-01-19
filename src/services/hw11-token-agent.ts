@@ -7,7 +7,7 @@ import BadgerUser from "../model/badger-user";
 import { NextFunction, Request, Response } from "express";
 
 
-export class CS571HW6TokenAgent {
+export class CS571HW11TokenAgent {
 
     public static readonly DEFAULT_EXP: number = 60 * 60;
 
@@ -46,7 +46,7 @@ export class CS571HW6TokenAgent {
 
 
     public generateAccessToken = (user: BadgerUser, exp?: number): string => {
-        return this.generateToken({ ...user }, exp ?? CS571HW6TokenAgent.DEFAULT_EXP);
+        return this.generateToken({ ...user }, exp ?? CS571HW11TokenAgent.DEFAULT_EXP);
     }
 
     public generateToken = (tokenBody: any, exp: number) => {

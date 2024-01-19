@@ -1,7 +1,7 @@
 import { Express } from 'express';
 
 import { CS571Route } from "@cs571/f23-api-middleware/src/interfaces/route";
-import { CS571HW6DbConnector } from '../services/hw6-db-connector';
+import { CS571HW11DbConnector } from '../services/hw11-db-connector';
 import { CS571Config } from '@cs571/f23-api-middleware';
 import HW11PublicConfig from '../model/configs/hw11-public-config';
 import HW11SecretConfig from '../model/configs/hw11-secret-config';
@@ -10,10 +10,10 @@ export class CS571LogoutRoute implements CS571Route {
 
     public static readonly ROUTE_NAME: string = '/logout';
 
-    private readonly connector: CS571HW6DbConnector;
+    private readonly connector: CS571HW11DbConnector;
     private readonly config: CS571Config<HW11PublicConfig, HW11SecretConfig>
 
-    public constructor(connector: CS571HW6DbConnector, config: CS571Config<HW11PublicConfig, HW11SecretConfig>) {
+    public constructor(connector: CS571HW11DbConnector, config: CS571Config<HW11PublicConfig, HW11SecretConfig>) {
         this.connector = connector;
         this.config = config;
     }

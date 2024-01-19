@@ -1,16 +1,16 @@
 import { Express } from 'express';
 
 import { CS571Route } from "@cs571/f23-api-middleware/src/interfaces/route";
-import { CS571HW6DbConnector } from '../services/hw6-db-connector';
+import { CS571HW11DbConnector } from '../services/hw11-db-connector';
 
 export class CS571GetMessagesRoute implements CS571Route {
 
     public static readonly ROUTE_NAME: string = '/messages';
 
-    private readonly connector: CS571HW6DbConnector;
+    private readonly connector: CS571HW11DbConnector;
     private readonly chatrooms: string[];
 
-    public constructor(chatrooms: string[], connector: CS571HW6DbConnector) {
+    public constructor(chatrooms: string[], connector: CS571HW11DbConnector) {
         this.chatrooms = chatrooms;
         this.connector = connector;
     }
